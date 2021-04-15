@@ -102,8 +102,9 @@ class Play extends Phaser.Scene {
             padding: {top: 5, bottom: 5},
             fixedWidth: 100
         }
+
         this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
-    
+        this.timerDisplay = this.add.text(borderUISize+ borderPadding, borderUISize + borderPadding*2, game.settings.gameTimer, scoreConfig).setOrigin(-4.5);
         //GAME OVER flag
         this.gameOver = false;
 
@@ -114,6 +115,8 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or <- for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+
+
     }
 
     update() {
@@ -128,11 +131,14 @@ class Play extends Phaser.Scene {
         this.sea.tilePositionX -=4;
         this.fishes.tilePositionX -=3;
         
+        //displays countdown time
+        this.timerDisplay.setText(this.clock.getRemainingSeconds().toString().substr(0,4));
+        
         if(!this.gameOver) {
             this.p1Rocket.update();
             this.ship1.update();
             this.ship2.update();
-            this.ship3.update();
+            this.ship3.update();           
         }
 
         if(this.checkCollision(this.p1Rocket, this.ship3)) {
@@ -148,17 +154,6 @@ class Play extends Phaser.Scene {
             this.shipExplode(this.ship1);
           }
     }
-
-    //checkCollision(rocket, ship) {
-    //    if( rocket.x < ship.x + ship.width &&
-    //        rocket.x + rocket.width > ship.x &&
-    //        rocket.y < ship.y + ship.height &&
-    //        rocket.height + rocket.y > ship.y) {
-    //            rocket.reset();
-    //            ship.reset();
-    //            this.shipExplode(ship);
-    //        }
-    //}
 
     checkCollision(rocket, ship) {
         if (rocket.x < ship.x + ship.width && 
