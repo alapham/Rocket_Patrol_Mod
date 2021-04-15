@@ -5,11 +5,11 @@ class Play extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("starfield", "assets/starfield.png");
         this.load.image("sea_back", "assets/sea_back0.png");
         this.load.image("fish_back", "assets/fish_back.png");
-        this.load.image('rocket', 'assets/rocket.png');
-        this.load.image('spaceship', 'assets/spaceship.png');
+        this.load.image('shark', 'assets/shark0.png');
+        this.load.image("fish", 'assets/fish_ship0.png');
+        this.load.image('fast_fish', 'assets/new_fish0.png');
         this.load.spritesheet('explosion', 'assets/explosion.png',
             {frameWidth: 64,
             frameHeight: 32,
@@ -30,7 +30,7 @@ class Play extends Phaser.Scene {
             this,
             game.config.width/2,
             game.config.height - borderUISize - borderPadding,
-            'rocket'
+            'shark'
             );
             // can add here too to add to scene
             //this.add.existing(this.p1Rocket);
@@ -39,7 +39,7 @@ class Play extends Phaser.Scene {
             this,
             game.config.width + borderUISize*6,
             borderUISize*4,
-            'spaceship',
+            'fish',
             0,30
             ).setOrigin(0,0);
 
@@ -47,7 +47,7 @@ class Play extends Phaser.Scene {
             this,
             game.config.width + borderUISize*3,
             borderUISize*5 + borderPadding*2,
-            'spaceship',
+            'fish',
             0,20
             ).setOrigin(0,0);
 
@@ -55,7 +55,7 @@ class Play extends Phaser.Scene {
             this,
             game.config.width,
             borderUISize*6 + borderPadding*4,
-            'spaceship',
+            'fish',
             0,10
             ).setOrigin(0,0);
 
@@ -63,8 +63,8 @@ class Play extends Phaser.Scene {
         this.ship4 = new New_Ship(
             this,
             game.config.width + borderPadding*9,
-            borderUISize*2+ borderPadding*3,
-            'spaceship',
+            borderUISize*3+ borderPadding*3,
+            'fast_fish',
             0,40
             ).setOrigin(0,0);
 
@@ -109,8 +109,8 @@ class Play extends Phaser.Scene {
             fixedWidth: 100
         }
 
-        this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
-        this.timerDisplay = this.add.text(borderUISize+ borderPadding*2, borderUISize + borderPadding*2, game.settings.gameTimer, scoreConfig).setOrigin(-1, 0);
+        this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig).setOrigin(-1,0);
+        this.timerDisplay = this.add.text(borderUISize+ borderPadding*2, borderUISize + borderPadding*2, game.settings.gameTimer, scoreConfig).setOrigin(-3, 0);
 
         //GAME OVER flag
         this.gameOver = false;
