@@ -19,9 +19,6 @@ class Play extends Phaser.Scene {
     }
 
     create() {
-//        this.starfield = this.add.tileSprite(
-//            0,0,640,480, 'new_starfield'
-//        ).setOrigin(0,0);
         this.sea = this.add.tileSprite(
             0,0,640,480, 'sea_back'
         ).setOrigin(0,0);
@@ -60,6 +57,15 @@ class Play extends Phaser.Scene {
             borderUISize*6 + borderPadding*4,
             'spaceship',
             0,10
+            ).setOrigin(0,0);
+
+        //new type of spaceship enemy
+        this.ship4 = new New_Ship(
+            this,
+            game.config.width + borderPadding*9,
+            borderUISize*2+ borderPadding*3,
+            'spaceship',
+            0.40
             ).setOrigin(0,0);
 
         //green UI rectangle
@@ -139,7 +145,8 @@ class Play extends Phaser.Scene {
             this.p1Rocket.update();
             this.ship1.update();
             this.ship2.update();
-            this.ship3.update();           
+            this.ship3.update();
+            this.ship4.update();
         }
 
         if(this.checkCollision(this.p1Rocket, this.ship3)) {
@@ -153,6 +160,10 @@ class Play extends Phaser.Scene {
         if (this.checkCollision(this.p1Rocket, this.ship1)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship1);
+          }
+        if (this.checkCollision(this.p1Rocket, this.ship4)) {
+            this.p1Rocket.reset();
+            this.shipExplode(this.ship4);
           }
     }
 

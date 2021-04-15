@@ -14,4 +14,3 @@ let keyLEFT, keyRIGHT, keyF, keyR;
 
 //Added countdown display
 //Changed game's theme/asthetic
-//Added new enemy ship
