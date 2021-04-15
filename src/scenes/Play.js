@@ -104,7 +104,8 @@ class Play extends Phaser.Scene {
         }
 
         this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
-        this.timerDisplay = this.add.text(borderUISize+ borderPadding, borderUISize + borderPadding*2, game.settings.gameTimer, scoreConfig).setOrigin(-4.5);
+        this.timerDisplay = this.add.text(borderUISize+ borderPadding*2, borderUISize + borderPadding*2, game.settings.gameTimer, scoreConfig).setOrigin(-1, 0);
+
         //GAME OVER flag
         this.gameOver = false;
 
@@ -130,8 +131,8 @@ class Play extends Phaser.Scene {
 
         this.sea.tilePositionX -=4;
         this.fishes.tilePositionX -=3;
-        
-        //displays countdown time
+
+        //displays countdown timer
         this.timerDisplay.setText(this.clock.getRemainingSeconds().toString().substr(0,4));
         
         if(!this.gameOver) {
