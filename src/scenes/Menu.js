@@ -25,13 +25,13 @@ class Menu extends Phaser.Scene {
         this.add.text(
             game.config.width/2,
             game.config.height/2 - borderUISize - borderPadding,
-            'ROCKET PATROL',
+            'UNDERWATER PATROL',
             menuConfig
             ).setOrigin(0.5);
         this.add.text(
             game.config.width/2,
             game.config.height/2,
-            'USE <-> arrows to move & (F) to fire',
+            'USE <-> arrows to move & (F) to FIRE',
             menuConfig
             ).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';

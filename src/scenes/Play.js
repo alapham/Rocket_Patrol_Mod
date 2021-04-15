@@ -65,7 +65,7 @@ class Play extends Phaser.Scene {
             game.config.width + borderPadding*9,
             borderUISize*2+ borderPadding*3,
             'spaceship',
-            0.40
+            0,40
             ).setOrigin(0,0);
 
         //green UI rectangle
