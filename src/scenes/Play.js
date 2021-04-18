@@ -69,12 +69,13 @@ class Play extends Phaser.Scene {
             ).setOrigin(0,0);
 
         //green UI rectangle
+        //0x00F00
         this.add.rectangle(
             0,
             borderUISize + borderPadding,
             game.config.width,
             borderUISize * 2,
-            0x00FF00,
+            0x00FFFF,
             ).setOrigin(0,0);
 
         // white borders

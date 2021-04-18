@@ -15,16 +15,17 @@ class Menu extends Phaser.Scene {
             fontFamily: 'Lora',
             fontSize: '28px',
             backgroundColor: '#34ebeb',
-            color: '#843605',
+            color: '#fff',
             align: 'right',
             padding: {top: 5, bottom: 5},
             fixedWidth: 0
         }
 
         //menu text
+        //game.config.height/2 - borderUISize - borderPadding
         this.add.text(
             game.config.width/2,
-            game.config.height/2 - borderUISize - borderPadding,
+            game.config.height - borderUISize - borderPadding,
             'UNDERWATER PATROL',
             menuConfig
             ).setOrigin(0.5);
@@ -34,11 +35,11 @@ class Menu extends Phaser.Scene {
             'USE <-> arrows to move & (F) to FIRE',
             menuConfig
             ).setOrigin(0.5);
-        menuConfig.backgroundColor = '#00FF00';
-        menuConfig.color = '#000';
+        menuConfig.backgroundColor = '#6cf5f5';
+        menuConfig.color = '#27c4c4';
         this.add.text(
             game.config.width/2,
-            game.config.height/2 + borderUISize + borderPadding,
+            game.config.height/3 + borderUISize + borderPadding,
             'Press <- for Novice or -> for Expert',
             menuConfig
             ).setOrigin(0.5);
