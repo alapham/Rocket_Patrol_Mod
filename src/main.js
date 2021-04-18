@@ -14,3 +14,6 @@ let keyLEFT, keyRIGHT, keyF, keyR;
 
 //Added countdown display
 //Changed game's theme/asthetic
+//Art by me
+//Added different sounds
+//Sound Effect Credit: https://freesound.org/

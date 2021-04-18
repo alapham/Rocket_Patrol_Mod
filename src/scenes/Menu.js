@@ -4,17 +4,17 @@ class Menu extends Phaser.Scene {
     }
 
     preload() {
-        this.load.audio('sfx_select', 'assets/blip_select12.wav');
-        this.load.audio('sfx_explosion', 'assets/explosion38.wav');
-        this.load.audio('sfx_rocket', 'assets/rocket_shot.wav');
+        this.load.audio('sfx_select', 'assets/button_sound.wav');
+        this.load.audio('sfx_explosion', 'assets/bite_sound.wav');
+        this.load.audio('sfx_rocket', 'assets/fire_sound.wav');
     }
 
     create() {
         //text settings
         let menuConfig = {
-            fontFamily: 'Times New Roman',
+            fontFamily: 'Lora',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
+            backgroundColor: '#34ebeb',
             color: '#843605',
             align: 'right',
             padding: {top: 5, bottom: 5},
