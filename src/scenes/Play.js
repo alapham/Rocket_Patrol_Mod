@@ -10,6 +10,7 @@ class Play extends Phaser.Scene {
         this.load.image('shark', 'assets/shark0.png');
         this.load.image("fish", 'assets/fish_ship0.png');
         this.load.image('fast_fish', 'assets/new_fish0.png');
+        this.load.image('UI_art', 'assets/UI_Border2.png');
         this.load.spritesheet('explosion', 'assets/explosion.png',
             {frameWidth: 64,
             frameHeight: 32,
@@ -78,11 +79,12 @@ class Play extends Phaser.Scene {
             0x00FFFF,
             ).setOrigin(0,0);
 
-        // white borders
+        // white borders and UI art
         this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0 ,0);
         this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0 ,0);
         this.add.rectangle(0, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0 ,0);
         this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0 ,0);
+        this.add.image(game.config.width/2, game.config.height/2, 'UI_art');
     
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);

@@ -24,7 +24,6 @@ class Menu extends Phaser.Scene {
         }
 
         //menu text
-        //game.config.height/2 - borderUISize - borderPadding
         this.add.text(
             game.config.width/2,
             game.config.height/3 - borderUISize - borderPadding,
@@ -47,7 +46,6 @@ class Menu extends Phaser.Scene {
             menuConfig
             ).setOrigin(0.5);
         
-//        this.add.image(game.config.width/2, game.config.height/2, 'menu');
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
     }
@@ -57,7 +55,7 @@ class Menu extends Phaser.Scene {
             //easy mode
             game.settings = {
                 spaceshipSpeed: 3,
-                gameTimer: 30000
+                gameTimer: 20000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene');
@@ -66,7 +64,7 @@ class Menu extends Phaser.Scene {
             //hard mode
             game.settings = {
                 spaceshipSpeed: 4,
-                gameTimer: 15000
+                gameTimer: 25000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene');
