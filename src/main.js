@@ -12,8 +12,9 @@ let borderPadding = borderUISize / 3;
 
 let keyLEFT, keyRIGHT, keyF, keyR;
 
-//Added countdown display
-//Changed game's theme/asthetic
-//Art by me
-//Added different sounds
-//Sound Effect Credit: https://freesound.org/
+//Added countdown/timer display
+//Added new ship type
+//Parallax scrolling
+//Changed game's theme/asthetic (Artwork, Sound Effects, UI, Animation)
+//Art and animation art by me (Allison Pham)
+//Sound Effects Credit: https://freesound.org/
