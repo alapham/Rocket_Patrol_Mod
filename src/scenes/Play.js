@@ -11,7 +11,7 @@ class Play extends Phaser.Scene {
         this.load.image("fish", 'assets/fish_ship0.png');
         this.load.image('fast_fish', 'assets/new_fish0.png');
         this.load.image('UI_art', 'assets/UI_Border2.png');
-        this.load.spritesheet('explosion', 'assets/explosion.png',
+        this.load.spritesheet('bite', 'assets/bite.png',
             {frameWidth: 64,
             frameHeight: 32,
             startFrame: 0,
@@ -93,8 +93,8 @@ class Play extends Phaser.Scene {
         
         // explosion animation
         this.anims.create({
-            key: 'explode',
-            frames: this.anims.generateFrameNumbers('explosion', {start: 0, end: 9, first: 0}),
+            key: 'chomp',
+            frames: this.anims.generateFrameNumbers('bite', {start: 0, end: 9, first: 0}),
             frameRate: 30
         });
 
@@ -183,8 +183,8 @@ class Play extends Phaser.Scene {
 
     shipExplode(ship) {
         ship.alpha = 0;
-        let boom = this.add.sprite(ship.x, ship.y, 'explosion').setOrigin(0,0);
-        boom.anims.play('explode');
+        let boom = this.add.sprite(ship.x, ship.y, 'chomp').setOrigin(0,0);
+        boom.anims.play('chomp');
         boom.on('animationcomplete', () => {
             ship.reset();
             ship.alpha = 1;
